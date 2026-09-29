@@ -10,3 +10,6 @@ __pycache__/
 .DS_Store
 figures/*.png
 !figures/.gitkeep
+
+# Personal working notes, not for public repo
+PROJECT_SUMMARY.md
