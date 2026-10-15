@@ -8,8 +8,6 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
-figures/*.png
-!figures/.gitkeep
 
 # Personal working notes, not for public repo
 PROJECT_SUMMARY.md
