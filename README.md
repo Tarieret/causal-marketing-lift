@@ -2,9 +2,9 @@
 
 Ad platforms report every conversion that follows an ad as "caused" by it, which overstates what the campaign actually earned and leads to overspending. Finding the true incremental lift, and knowing whether the method used to estimate it can be trusted, is what separates a defensible budget decision from a flattering dashboard.
 
-**Problem:** Estimate how many of a campaign's conversions were truly incremental (would not have happened without the ad), using a real holdout experiment, and then test whether common causal methods can recover a known effect when exposure is *not* random.
+**Problem:** Estimate how many of a campaign's conversions were truly incremental (i.e. would not have happened without the ad), using a real holdout experiment, and then test whether common causal methods can recover a known effect when exposure is *not* random.
 
-**Approach decision:** Split the work in two. Part 1 analyzes a real ad-vs-PSA holdout (588,101 users), where the randomized control makes a causal reading possible but the truth is unknown. Part 2 uses simulated data with a known true lift (+2pp) and built-in confounding, because only a known answer can show whether a method is right, not just that it ran. Compared four estimators against the truth over 500 replications at three confounding levels, with a power analysis up front, rather than trusting a single run.
+**Approach decision:** For this experiment I split the work in two. Part 1 analyzes a real ad-vs-PSA holdout (588,101 users), where the randomized control makes a causal reading possible but the truth is unknown. Part 2 uses simulated data with a known true lift (+2pp) and built-in confounding, because only a known answer can show whether a method is right. I compared four estimators against the truth over 500 replications at three confounding levels, with a power analysis up front.
 
 **What broke:** The naive comparison of exposed vs. unexposed users. In the simulation it overstated the +2pp lift by 2.5pp under moderate confounding and 4.1pp under strong, and its 95% confidence interval contained the true value 0% of the time: precise, and wrong. In the real data, attributed conversions overstated the incremental effect by more than 3x.
 
